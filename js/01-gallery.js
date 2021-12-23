@@ -34,6 +34,31 @@ function createImageOfGalleryEl(galleryItems) {
     })
     .join("");
 }
+console.log(galleryItems);
+
+
+// const category = array => {
+//   array.forEach(element => {
+//     const titleEl = element.querySelector('h2');
+//     const litsItemEl = element.querySelectorAll('li');
+//     const categoryNameEl = `Category: ${titleEl.textContent}`;
+//     const categoryNumberEl = `Elements: ${litsItemEl.length}`;
+//     console.log(categoryNameEl);
+//     console.log(categoryNumberEl);
+//   });
+// };
+
+const wtf = fff=>{
+  fff.forEach(sdsd=>{
+    const find=sdsd.querySelector('.gallery__image').dataset.source;
+    console.log("~ find", find);
+  })
+}
+wtf(galleryItems)
+
+
+// const iam=find.dataset.source
+// console.log("~ iam", iam)
 
 function onClickImg(e) {
   e.preventDefault();
@@ -42,67 +67,20 @@ function onClickImg(e) {
   if (!imgOnClick) {
     return;
   }
-
-  //   console.log(data - source);
   instance.show();
   console.log("click");
 }
 
-// import * as basicLightbox from "basiclightbox";
-// let fff = galleryItems.map(({ original }) => {
-//   return original;
-// });
-// console.log("fff", fff);
-// const defaultImg = document.querySelectorAll(".gallery__image");
-// console.log("defaultImg", defaultImg);
 const instance = basicLightbox.create(
-  // console.log("fff", fff)
-  createImageOfGalleryEl(galleryItems)
-  //   `
-  //     // <img src='' >
-  //     // width="800" height="600">
-  // `
+//   const find111 =document.querySelector('.gallery__image');
+// console.log("~ find", find111);
+// const iam111=find111.dataset.source;
+// console.log("~ iam", iam111),
+ 
+  `
+    <img src='${document.querySelector('.gallery__image').dataset.source}' width="800" height="600">
+`
 );
 
-const ggggg = document.querySelector("dataset");
+const ggggg = document.querySelector("galleryItems");
 console.log("ggggg", ggggg);
-
-// instance.show();
-// const paletteContainer = document.querySelector('.js-palette');
-// const cardsMarkup = createColorCardsMarkup(colors);
-
-// paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
-
-// paletteContainer.addEventListener('click', onPaletteContainerClick);
-
-// function createColorCardsMarkup(colors) {
-//   return colors
-//     .map(({ hex, rgb }) => {
-//       return `
-//     <div class="color-card">
-//      <div><div><div> <div
-//      class="color-swatch"
-//      data-hex="${hex}"
-//      data-rgb="${rgb}"
-//      style="background-color: ${hex}"
-//    ></div></div></div></div>
-//       <div class="color-meta">
-//         <p>HEX: ${hex}</p>
-//         <p>RGB: ${rgb}</p>
-//       </div>
-//     </div>
-//     `;
-//     })
-//     .join('');
-// }
-
-// <div class="gallery__item">
-//   <a class="gallery__link" href="large-image.jpg">
-//     <img
-//       class="gallery__image"
-//       src="small-image.jpg"
-//       data-source="large-image.jpg"
-//       alt="Image description"
-//     />
-//   </a>
-// </div>
