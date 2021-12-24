@@ -36,30 +36,6 @@ function createImageOfGalleryEl(galleryItems) {
 }
 console.log(galleryItems);
 
-
-// const category = array => {
-//   array.forEach(element => {
-//     const titleEl = element.querySelector('h2');
-//     const litsItemEl = element.querySelectorAll('li');
-//     const categoryNameEl = `Category: ${titleEl.textContent}`;
-//     const categoryNumberEl = `Elements: ${litsItemEl.length}`;
-//     console.log(categoryNameEl);
-//     console.log(categoryNumberEl);
-//   });
-// };
-
-const wtf = fff=>{
-  fff.forEach(sdsd=>{
-    const find=sdsd.querySelector('.gallery__image').dataset.source;
-    console.log("~ find", find);
-  })
-}
-wtf(galleryItems)
-
-
-// const iam=find.dataset.source
-// console.log("~ iam", iam)
-
 function onClickImg(e) {
   e.preventDefault();
   const imgOnClick = e.target.classList.contains("gallery__image");
@@ -72,15 +48,25 @@ function onClickImg(e) {
 }
 
 const instance = basicLightbox.create(
-//   const find111 =document.querySelector('.gallery__image');
-// console.log("~ find", find111);
-// const iam111=find111.dataset.source;
-// console.log("~ iam", iam111),
- 
+  // galleryItems.setAttribute("src", `${ggggggggg}`)
+
   `
-    <img src='${document.querySelector('.gallery__image').dataset.source}' width="800" height="600">
-`
+      <img src='${
+        document.querySelector(".gallery__image").dataset.source
+      }' width="800" height="600">
+  `
 );
 
-const ggggg = document.querySelector("galleryItems");
-console.log("ggggg", ggggg);
+// const find111 = document.querySelectorAll(".gallery__image");
+// console.log("~ find", find111);
+
+document.querySelectorAll(".gallery__image").forEach((element) => {
+  return (instance = basicLightbox.create(
+    // galleryItems.setAttribute("src", `${ggggggggg}`)
+
+    `
+      <img src='${element.dataset.source}' width="800" height="600">
+  `
+  ));
+  // return console.log(element.dataset.source);
+});
