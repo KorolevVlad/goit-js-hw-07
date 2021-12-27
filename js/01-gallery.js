@@ -28,6 +28,7 @@ function createImageOfGalleryEl(galleryItems) {
 }
 
 function onClickImg(e) {
+  window.addEventListener("keydown", closeEsc);
   e.preventDefault();
   const imgOnClick = e.target.classList.contains("gallery__image");
 
@@ -36,9 +37,15 @@ function onClickImg(e) {
   }
 
   const modalImage = e.target.dataset.source;
-  const intance = basicLightbox.create(
+  const instance = basicLightbox.create(
     `<img src ="${modalImage}" width="800" heigth="600">`
   );
 
-  intance.show();
+  instance.show();
+
+  function closeEsc(e) {
+    if (e.code === "Escape") {
+      instance.close();
+    }
+  }
 }
